@@ -1,0 +1,383 @@
+{
+    "name": "symbolconnector",
+    "version": "1.0.0",
+    "label": "Symbol Security",
+    "description": "Symbol security awareness training",
+    "publisher": "Thrive",
+    "cs_approved": true,
+    "cs_compatible": true,
+    "category": "Information",
+    "icon_small_name": "symbolSAT_large.png",
+    "icon_large_name": "symbolSAT_large.png",
+    "tags": [],
+    "help_online": "https://api.symbolsecurity.com/api/docs.html",
+    "configuration": {
+        "fields": [
+            {
+                "title": "Base URL",
+                "type": "text",
+                "name": "url",
+                "description": "Base URL of the Symbol API",
+                "tooltip": "Base URL of the Symvol API",
+                "required": true,
+                "editable": true,
+                "visible": true,
+                "value": "api.symbolsecurity.com"
+            },
+            {
+                "title": "API Key",
+                "type": "password",
+                "name": "api_key",
+                "description": "API key that is available under your Symbol Security Account",
+                "tooltip": "API key that is available under your Symbol Security Account",
+                "required": true,
+                "editable": true,
+                "visible": true
+            },
+            {
+                "title": "Protocol",
+                "type": "select",
+                "editable": true,
+                "options": [
+                    "HTTPS"
+                ],
+                "name": "protocol",
+                "visible": true,
+                "required": true,
+                "value": "HTTPS"
+            },
+            {
+                "title": "Access Token",
+                "type": "text",
+                "name": "access_token",
+                "description": "Access token to be used on behalf of the API Key",
+                "required": false,
+                "editable": false,
+                "visible": false,
+                "value": ""
+            }
+        ]
+    },
+    "operations": [
+        {
+            "operation": "get_companies",
+            "title": "List Companies",
+            "description": "Retrieve a lst of the Companies registered under the MSP account",
+            "enabled": true,
+            "category": "investigation",
+            "annotation": "get_companies",
+            "output_schema": [
+                {
+                    "addressLine1": "",
+                    "country": "",
+                    "city": "",
+                    "state": "",
+                    "zipCode": "",
+                    "timezone": "",
+                    "name": "",
+                    "addressLine2": "",
+                    "updatedAt": "",
+                    "createdAt": "",
+                    "id": ""
+                }
+            ],
+            "parameters": []
+        },
+        {
+            "operation": "add_company",
+            "title": "Add New Company",
+            "description": "Add a new company at the msp Level",
+            "enabled": true,
+            "category": "investigation",
+            "annotation": "add_company",
+            "output_schema": {
+                "addressLine1": "",
+                "addressLine2": "",
+                "city": "",
+                "country": "",
+                "createdAt": "",
+                "id": "",
+                "name": "",
+                "performance": {
+                    "assignments": "",
+                    "assignmentsCompleted": "",
+                    "assignmentsOverdue": "",
+                    "assignmentsPending": "",
+                    "campaigns": "",
+                    "emailsReported": "",
+                    "emailsSent": "",
+                    "phishClicks": "",
+                    "riskScore": "",
+                    "riskStatus": "",
+                    "sharedData": "",
+                    "users": ""
+                },
+                "settings": {
+                    "createdAt": "",
+                    "customSender": "",
+                    "enhancedDeliverabilityEnabled": "",
+                    "id": "",
+                    "optIn": "",
+                    "pabForwardEmails": "",
+                    "updatedAt": "",
+                    "workflow": ""
+                },
+                "state": "",
+                "timezone": "",
+                "updatedAt": "",
+                "zipCode": ""
+            },
+            "parameters": [
+                {
+                    "title": "Company Data",
+                    "type": "textarea",
+                    "name": "company_data",
+                    "description": "A JSON object of the company data",
+                    "tooltip": "A JSON object of the company data",
+                    "required": true,
+                    "editable": true,
+                    "visible": true,
+                    "placeholder": "",
+                    "value": ""
+                }
+            ]
+        },
+        {
+            "operation": "get_company_id",
+            "title": "Get Comapny By ID",
+            "description": "Get detailed informaiton about a company based on the company ID",
+            "enabled": true,
+            "category": "investigation",
+            "annotation": "company_by_id",
+            "output_schema": {
+                "addressLine1": "",
+                "addressLine2": "",
+                "city": "",
+                "country": "",
+                "createdAt": "",
+                "id": "",
+                "name": "",
+                "performance": {
+                    "assignments": "",
+                    "assignmentsCompleted": "",
+                    "assignmentsOverdue": "",
+                    "assignmentsPending": "",
+                    "campaigns": "",
+                    "emailsReported": "",
+                    "emailsSent": "",
+                    "phishClicks": "",
+                    "riskScore": "",
+                    "riskStatus": "",
+                    "sharedData": "",
+                    "users": ""
+                },
+                "settings": {
+                    "createdAt": "",
+                    "customSender": "",
+                    "enhancedDeliverabilityEnabled": "",
+                    "id": "",
+                    "optIn": "",
+                    "pabForwardEmails": "",
+                    "updatedAt": "",
+                    "workflow": ""
+                },
+                "state": "",
+                "timezone": "",
+                "updatedAt": "",
+                "zipCode": ""
+            },
+            "parameters": [
+                {
+                    "title": "Company ID",
+                    "type": "text",
+                    "name": "company_id",
+                    "description": "the ID of the company in symbol",
+                    "tooltip": "the ID of the company in symbol",
+                    "required": true,
+                    "editable": true,
+                    "visible": true,
+                    "value": ""
+                }
+            ]
+        },
+        {
+            "operation": "update_company",
+            "title": "Update Company",
+            "description": "Update the Company information by the id",
+            "enabled": true,
+            "category": "investigation",
+            "annotation": "update_company",
+            "output_schema": {
+                "addressLine1": "",
+                "addressLine2": "",
+                "city": "",
+                "country": "",
+                "createdAt": "",
+                "id": "",
+                "name": "",
+                "performance": {
+                    "assignments": "",
+                    "assignmentsCompleted": "",
+                    "assignmentsOverdue": "",
+                    "assignmentsPending": "",
+                    "campaigns": "",
+                    "emailsReported": "",
+                    "emailsSent": "",
+                    "phishClicks": "",
+                    "riskScore": "",
+                    "riskStatus": "",
+                    "sharedData": "",
+                    "users": ""
+                },
+                "settings": {
+                    "createdAt": "",
+                    "customSender": "",
+                    "enhancedDeliverabilityEnabled": "",
+                    "id": "",
+                    "optIn": "",
+                    "pabForwardEmails": "",
+                    "updatedAt": "",
+                    "workflow": ""
+                },
+                "state": "",
+                "timezone": "",
+                "updatedAt": "",
+                "zipCode": ""
+            },
+            "parameters": [
+                {
+                    "title": "Company ID",
+                    "type": "text",
+                    "name": "company_id",
+                    "description": "the ID of the company in symbol",
+                    "tooltip": "the ID of the company in symbol",
+                    "required": true,
+                    "editable": true,
+                    "visible": true,
+                    "value": ""
+                },
+                {
+                    "title": "Company Data",
+                    "type": "textarea",
+                    "name": "company_data",
+                    "description": "A JSON object of the company data",
+                    "tooltip": "A JSON object of the company data",
+                    "required": true,
+                    "editable": true,
+                    "visible": true,
+                    "placeholder": "",
+                    "value": ""
+                }
+            ]
+        },
+        {
+            "operation": "get_cyber_threat",
+            "title": "GET Cyber threat Results",
+            "description": "gets the cyber threat results for the specified company",
+            "enabled": true,
+            "category": "investigation",
+            "annotation": "get_cyber_threat",
+            "output_schema": [
+                {
+                    "breach_date": "",
+                    "content": "",
+                    "id": "",
+                    "name": "",
+                    "negativity": "",
+                    "status": "",
+                    "url": ""
+                }
+            ],
+            "parameters": [
+                {
+                    "title": "Company ID",
+                    "type": "text",
+                    "name": "company_id",
+                    "description": "the ID of the company in symbol",
+                    "tooltip": "the ID of the company in symbol",
+                    "required": true,
+                    "editable": true,
+                    "visible": true,
+                    "value": ""
+                }
+            ]
+        },
+        {
+            "operation": "get_email_threats",
+            "title": "Get Email Threat Alerts",
+            "description": "get all email threat alerts by company id",
+            "enabled": true,
+            "category": "investigation",
+            "annotation": "get_email_threats",
+            "output_schema": {
+                "aup": "",
+                "breach_date": "",
+                "breach_name": "",
+                "exposed_data": "",
+                "status": "",
+                "user_name": ""
+            },
+            "parameters": [
+                {
+                    "title": "Company ID",
+                    "type": "text",
+                    "name": "company_id",
+                    "description": "the ID of the company in symbol",
+                    "tooltip": "the ID of the company in symbol",
+                    "required": true,
+                    "editable": true,
+                    "visible": true,
+                    "value": ""
+                }
+            ]
+        },
+        {
+            "operation": "get_domain_threats",
+            "title": "List Security Threats by Domain",
+            "description": "List all security threats by domain",
+            "enabled": true,
+            "category": "investigation",
+            "annotation": "get_domain_threats",
+            "output_schema": [
+                {
+                    "domain": "",
+                    "id": "",
+                    "variants": [
+                        {
+                            "domain_name": "",
+                            "ip_address": "",
+                            "mx_found": "",
+                            "risk": "",
+                            "score": "",
+                            "status": ""
+                        }
+                    ]
+                }
+            ],
+            "parameters": [
+                {
+                    "title": "Company ID",
+                    "type": "text",
+                    "name": "company_id",
+                    "description": "the ID of the company in symbol",
+                    "tooltip": "the ID of the company in symbol",
+                    "required": true,
+                    "editable": true,
+                    "visible": true,
+                    "value": ""
+                },
+                {
+                    "title": "Domain",
+                    "type": "text",
+                    "name": "domain",
+                    "description": "The Domain to list threats from",
+                    "tooltip": "Leave blank for all domain",
+                    "required": false,
+                    "editable": true,
+                    "visible": true,
+                    "value": ""
+                }
+            ]
+        }
+    ]
+}
